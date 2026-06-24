@@ -8,6 +8,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    cursor: url(../img/cursor.png), auto;
 }
 
 /* Canvas de partículas: cubre toda la pantalla, detrás del contenido */
@@ -20,11 +21,11 @@ body, html {
     pointer-events: none;
 }
 
-/* Estrellas GIF esparcidas sobre el fondo */
+/* Estrellas GIF: por encima del planeta, debajo de las lunas */
 #estrellas-decorativas {
     position: fixed;
     inset: 0;
-    z-index: 0;
+    z-index: 2;
     pointer-events: none;
     overflow: hidden;
 }
@@ -52,7 +53,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #ffffff;
-    background-image: url(../img/fondo.png);
+    background-image: url(../img/fondo2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,27 +64,25 @@ body {
     width: 1000px;
     height: 600px;
     position: relative;
-    z-index: 1;
     flex-shrink: 0;
 }
 
-/* --- Saturno (saturno_w.png: planeta + anillos en una sola imagen) --- */
+/* --- Saturno (capa inferior de la escena) --- */
 .planeta-link {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 1; /* 1 — planeta */
 }
 
 .planeta {
     width: min(920px, 95%);
     height: auto;
     display: block;
-    /* Fondo negro del PNG → transparente; Saturno queda negro sobre fondo claro */
-    filter: invert(1);
     mix-blend-mode: multiply;
+    rotate: 15deg;
 }
 
 /* --- Lunas satelitales de Saturno (estáticas) --- */
@@ -91,7 +90,7 @@ body {
 .lunas-satelitales {
     position: absolute;
     inset: 0;
-    z-index: 3;
+    z-index: 3; /* 3 — lunas (capa superior) */
     pointer-events: none;
 }
 

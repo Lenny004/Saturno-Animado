@@ -61,7 +61,7 @@
             x: Math.random() * w,
             y: posY,
             radio: radio,
-            baseOpacity: rand(0.25, 0.95),
+            baseOpacity: rand(0.50, 0.95),
             twinkleSpeed: rand(0.4, 1.8),       // velocidad del parpadeo
             twinklePhase: rand(0, Math.PI * 2), // desfase inicial del seno
             driftX: reduceMotion ? 0 : rand(-0.08, 0.08),
