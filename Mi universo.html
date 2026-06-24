@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi Universo: una experiencia web personal inspirada en Saturno y sus lunas. Un regalo hecho con cariño para mi novia.">
+
+    <link type="text/css" rel="stylesheet" href="css/estilo.css" />
+    <link rel="icon" type="image/png" href="img/Corazón.png">
+
+    <title>Mi Universo</title>
+</head>
+
+<body>
+
+    <!-- Fondo animado: puntos generados por js/particulas.js -->
+    <canvas id="particulas" aria-hidden="true"></canvas>
+
+    <!-- Estrellas brillantes esparcidas (estrella.gif) -->
+    <div id="estrellas-decorativas" aria-hidden="true"></div>
+
+    <!-- Escena central: Saturno, anillos y lunas principales -->
+    <div class="saturno">
+
+        <!-- Siete lunas de Saturno (estáticas, posicionadas alrededor del planeta) -->
+        <div class="lunas-satelitales">
+
+            <div class="luna luna--titan">
+                <p>Titán</p>
+                <img src="img/Luna.png" alt="Titán">
+            </div>
+
+            <div class="luna luna--encelado">
+                <p>Encélado</p>
+                <img src="img/Luna.png" alt="Encélado">
+            </div>
+
+            <div class="luna luna--mimas">
+                <p>Mimas</p>
+                <img src="img/Luna.png" alt="Mimas">
+            </div>
+
+            <div class="luna luna--tetis">
+                <p>Tetis</p>
+                <img src="img/Luna.png" alt="Tetis">
+            </div>
+
+            <div class="luna luna--dione">
+                <p>Dione</p>
+                <img src="img/Luna.png" alt="Dione">
+            </div>
+
+            <div class="luna luna--rea">
+                <p>Rea</p>
+                <img src="img/Luna.png" alt="Rea">
+            </div>
+
+            <div class="luna luna--japeto">
+                <p>Jápeto</p>
+                <img src="img/Luna.png" alt="Jápeto">
+            </div>
+
+        </div>
+
+        <!-- Saturno con anillos (imagen única) -->
+        <a href="https://www.youtube.com/playlist?list=PLgnNCeVWaw1FZ5lHUjwbDfOuFQhqB4_XM" class="planeta-link">
+            <img src="img/saturno_w.png" alt="Saturno" class="planeta">
+        </a>
+
+    </div>
+
+    <script src="js/particulas.js"></script>
+    <script src="js/estrellas.js"></script>
+</body>
+
+</html>

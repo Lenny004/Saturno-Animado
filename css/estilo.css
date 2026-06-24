@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Mi Universo — estilos globales
+   ========================================================================== */
+
+/* --- Reset y layout base --- */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Canvas de partículas: cubre toda la pantalla, detrás del contenido */
+#particulas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Estrellas GIF esparcidas sobre el fondo */
+#estrellas-decorativas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.estrella-gif {
+    position: absolute;
+    height: auto;
+    transform: translate(-50%, -50%);
+    /* Invierte el GIF: brillo blanco → negro; multiply oculta el fondo claro */
+    filter: invert(1);
+    mix-blend-mode: multiply;
+    animation: brillo-estrella 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes brillo-estrella {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.85); }
+    50%      { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* --- Fondo blanco con textura acuarela --- */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --- Contenedor principal de Saturno (centrado en pantalla vía flex en body) --- */
+.saturno {
+    width: 1000px;
+    height: 600px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+/* --- Saturno (saturno_w.png: planeta + anillos en una sola imagen) --- */
+.planeta-link {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.planeta {
+    width: min(920px, 95%);
+    height: auto;
+    display: block;
+    /* Fondo negro del PNG → transparente; Saturno queda negro sobre fondo claro */
+    filter: invert(1);
+    mix-blend-mode: multiply;
+}
+
+/* --- Lunas satelitales de Saturno (estáticas) --- */
+
+.lunas-satelitales {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.luna {
+    position: absolute;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    color: #5c4f47;
+    transform: translate(-50%, -50%);
+}
+
+.luna img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+}
+
+.luna p {
+    margin: 0 0 4px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* Titán: la más grande (supera a Mercurio en tamaño real) */
+.luna--titan {
+    top: 14%;
+    left: 86%;
+}
+.luna--titan img { width: 68px; }
+
+/* Rea: segunda en tamaño entre estas lunas */
+.luna--rea {
+    top: 58%;
+    left: 91%;
+}
+.luna--rea img { width: 48px; }
+
+/* Jápeto */
+.luna--japeto {
+    top: 38%;
+    left: 6%;
+}
+.luna--japeto img { width: 46px; }
+
+/* Dione */
+.luna--dione {
+    top: 76%;
+    left: 58%;
+}
+.luna--dione img { width: 42px; }
+
+/* Tetis */
+.luna--tetis {
+    top: 70%;
+    left: 14%;
+}
+.luna--tetis img { width: 38px; }
+
+/* Encélado */
+.luna--encelado {
+    top: 28%;
+    left: 10%;
+}
+.luna--encelado img { width: 34px; }
+
+/* Mimas: la más pequeña del grupo */
+.luna--mimas {
+    top: 20%;
+    left: 72%;
+}
+.luna--mimas img { width: 28px; }
+
+/* --- Accesibilidad: respeta preferencia de movimiento reducido --- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
