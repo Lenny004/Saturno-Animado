@@ -50,11 +50,11 @@
         var sorteo = Math.random();
         var radio;
         if (sorteo < 0.72) {
-            radio = rand(0.4, 1.1);   // puntos casi de 1 px
+            radio = rand(0.4, 2.1);   // puntos casi de 1 px
         } else if (sorteo < 0.94) {
-            radio = rand(1.2, 2.2);   // estrellas medianas
+            radio = rand(2.2, 3.9);   // estrellas medianas
         } else {
-            radio = rand(2.4, 3.8);   // estrellas más visibles
+            radio = rand(4, 7);   // estrellas más visibles
         }
 
         return {

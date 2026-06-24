@@ -98,7 +98,8 @@ body {
     position: absolute;
     font-family: Verdana, sans-serif;
     text-align: center;
-    color: #5c4f47;
+    font-weight: bold;
+    color: #000000;
     transform: translate(-50%, -50%);
 }
 
@@ -109,6 +110,7 @@ body {
 }
 
 .luna p {
+    background-color: #ffffff;
     margin: 0 0 4px;
     font-size: 11px;
     white-space: nowrap;
